@@ -1,0 +1,15 @@
+node_modules
+note.txt
+/config/production.json
+/config/default.json
+
+# dependencies
+/fronend/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
