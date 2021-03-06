@@ -1,0 +1,40 @@
+.grid{
+  display: grid;
+  grid-template-columns: 200px 200px;
+  column-gap: .5rem;
+  row-gap: 1rem;
+  margin: .3rem;
+  padding: .3rem;
+
+  justify-content: space-around;
+  
+
+}
+label, input {
+  display: block; 
+}
+.grid input{
+  background-color:  lightgrey;
+  border: none;
+}
+.grid input:focus {
+  background-color: white;
+}
+
+.controls{
+  background-color: lightgrey;
+  border-radius: .3rem;
+  padding: .3rem; 
+}
+button{
+  background-color: var(--secondary-color);
+  border-radius: 35%;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  border: none;
+}
+button:hover{
+  background-color: var(--light-color);
+  color: var(--primary-color);
+}

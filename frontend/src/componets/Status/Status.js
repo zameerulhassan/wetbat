@@ -1,11 +1,23 @@
 //stub, dumb component
 import React from "react";
-import "./Status.css";
+import Form from '../Form/Form'
+import classes from "./Status.module.css";
 const Status = () => {
   return (
-    <div className="status-container-1">
-      <section className="status-box1 card">
-        <h1>Quick Quote</h1>{" "}
+    <div className={classes.container}>
+      <section className={[classes.box1, "card"].join(" ")}>
+        <h1>Quick Quote</h1> 
+        <Form/>
+      </section>
+      <section className={[classes.box2, "card"].join(" ")}>
+        <h1>Pending quotes</h1>{" "}
+        <h6>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the
+        </h6>
+      </section>
+      <section className={[classes.box3, "card"].join(" ")}>
+        <h1>New Leads</h1>
         <h6>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti,
           incidunt deleniti neque laudantium nisi id nulla maxime adipisci
@@ -21,20 +33,6 @@ const Status = () => {
           consectetur adipisicing elit. Corrupti, incidunt deleniti neque
           laudantium nisi id nulla maxime adipisci obcaecati ab voluptatibus sit
           error sed. Illo voluptate quos laboriosam inventore autem.
-        </h6>
-      </section>
-      <section className="status-box2 card">
-        <h1>Pending quotes</h1>{" "}
-        <h6>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the
-        </h6>
-      </section>
-      <section className="status-box3 card">
-        <h1>New Leads</h1>
-        <h6>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the
         </h6>
       </section>
     </div>
