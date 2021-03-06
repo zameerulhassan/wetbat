@@ -1,0 +1,25 @@
+/* convert this to css module as well */
+  .summary-container-1{
+    display: flex;
+    flex-basis: 100%;
+    margin: .5rem .5rem;
+  }
+
+  .summary-container-1 section{
+    /* border: 1px red solid; */
+    padding: .2rem;
+      }
+
+    .dash-board-box1{
+      flex: 2
+    }
+    .dash-board-box2{
+      flex: 1
+    }
+    .dash-board-box3{
+      flex: 1
+    }
+    .dash-board-box4{
+      flex: 1
+    }
+ 

@@ -1,0 +1,22 @@
+/* convert this to css module as well */
+  .status-container-1{
+    display: flex;
+    flex-basis: 100%;
+    margin: .5rem .5rem;
+  }
+
+  .status-container-1 section{
+    /* border: 1px red solid; */
+    padding: .2rem;
+      }
+
+    .status-box1{
+      flex: 2
+    }
+    .status-box2{
+      flex: 2
+    }
+    .status-box3{
+      flex: 1.5
+    }
+ 

@@ -1,0 +1,19 @@
+
+  .container{
+    display: flex;
+    flex-basis: 100%;
+    margin: .5rem .5rem;
+  }
+
+  .container section{
+    /* border: 1px red solid; */
+    padding: .2rem;
+      }
+
+    .box1{
+      flex: 4
+    }
+    .box2{
+      flex: 1.5
+    }
+ 

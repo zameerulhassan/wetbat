@@ -1,0 +1,49 @@
+
+/* refactor to css-modules. */
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.7rem 2rem;
+    z-index: 1;
+    width: 100%;
+    opacity: 0.8;
+    margin-bottom: 0rem;
+  }
+  
+  .navbar ul {
+    display: flex;
+    list-style-type: none;
+    
+  }
+
+  .navbar ul li {
+    padding: 0.7rem .5rem;
+    cursor: pointer;
+    margin: 0rem 3rem;
+    
+  }
+  
+ .navbar input{
+  border-radius: 5px;
+
+  width: 20rem;
+  padding: .5rem
+ }
+
+ .image{
+   width: 25px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0rem 3rem;
+  /* z-index: 1; */
+  width: 15vw;
+}
