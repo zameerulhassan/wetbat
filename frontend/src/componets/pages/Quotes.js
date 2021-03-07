@@ -5,7 +5,7 @@ const Quotes = () => {
   return (
     <Wrapper styles="content">
       <h1>{name}</h1>
-      <button onClick={()=>setName("hassan")}>change</button>
+      <button onClick={() => setName("hassan")}>change</button>
     </Wrapper>
   );
 };

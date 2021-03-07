@@ -5,8 +5,9 @@ import Sidebar from "./componets/Sidebar/Sidebar";
 import Navbar from "./componets/Navbar/Navbar";
 import Wrapper from "./componets/layout/Wrapper";
 import Main from "./componets/Main/Main";
-import Quotes from "./componets/pages/Quotes";
+
 import Error from "./componets/pages/Error";
+import Quotes from "./componets/pages/Quotes";
 function App() {
   return (
     <Router>

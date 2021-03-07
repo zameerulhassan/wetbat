@@ -1,15 +1,18 @@
 import React from "react";
 import Wrapper from "../layout/Wrapper";
 import classes from "./Form.module.css";
-const Input = ({ label, type }) => {
+const Input = ({ label, name, type, onChange }) => {
   return (
     <Wrapper styles={classes.controls}>
-      <label for={label}>{label} </label>
+      <label htmlFor={label}>
+        {label}{" "}
+      </label>
       <input
         className={classes.input}
         type={type}
-        name={label}
-        id={label}
+        name={name}
+        id={name}
+        onChange={onChange}
       ></input>
     </Wrapper>
   );
