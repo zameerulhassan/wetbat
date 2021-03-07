@@ -8,6 +8,7 @@ import Main from "./componets/Main/Main";
 
 import Error from "./componets/pages/Error";
 import Quotes from "./componets/pages/Quotes";
+import Quote from "./componets/pages/Quote";
 function App() {
   return (
     <Router>
@@ -18,6 +19,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={Main} />
             <Route path="/quotes" component={Quotes} />
+            <Route path="/quote" component={Quote} />
             <Route path="*" component={Error} />
           </Switch>
         </Wrapper>

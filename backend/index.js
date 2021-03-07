@@ -1,3 +1,6 @@
+//refactor:  monolithic to controller , models... & util/config for db credentials.
+//create model class and export from models.
+
 const express = require("express");
 
 const cors = require("cors");
@@ -20,6 +23,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+//@route
 //ENDPOINT : '/api/createquote'
 //METHOD: POST
 //quick and dirty > refactor later.
@@ -51,6 +55,33 @@ app.post("/api/createquote", (req, res) => {
     }
   );
 });
+
+//@route
+//ENDPOINT : '/api/quotes'
+//METHOD: GET
+app.get("/api/quotes", (req, res) => {
+  db.query("SELECT * FROM quotes", (err, result) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send(result);
+    }
+  });
+});
+
+//@route
+//ENDPOINT : '/api/quotes/:id'
+//METHOD: GET
+// app.get("/api/quote/quote_id", (req, res) => {
+//   const quote_id = req.body.quote_id;
+//   db.query("SELECT * FROM quotes WHERE id =?"[quote_id], (err, result) => {
+//     if (err) {
+//       console.log(err);
+//     } else {
+//       res.send(result);
+//     }
+//   });
+// });
 
 app.listen(PORT, () => {
   console.log(`Server started on port ${PORT}`);

@@ -3,7 +3,7 @@ import Summary from "../Summary/Summary";
 import Status from "../Status/Status";
 import Charts from "../Charts/Charts";
 import Destination from "../Destination/Destination";
-
+//css comes from App.css > refactor later.
 import Wrapper from "../layout/Wrapper";
 const Main = () => {
   return (
