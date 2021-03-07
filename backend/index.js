@@ -4,10 +4,12 @@ const cors = require("cors");
 
 const mysql = require("mysql");
 
+//this should come from config/env
 const db = mysql.createPool({
   host: "localhost",
   user: "root",
   password: "password1",
+  port: "5000",
   database: "wetbatdb",
 });
 
@@ -16,19 +18,38 @@ const PORT = process.env.PORT || 4000;
 const app = express();
 
 app.use(cors());
+app.use(express.json());
 
-//test
-app.get("/", (req, res) => {
-  const sqlQuery =
-    "INSERT INTO `wetbatdb`.`quotes` (`departure_airport`, `destination_airport`, `no_of_travellers`, `transportation`, `contact_name`, `contact_number`, `contact_email`, `contact_address`, `sales_person`) VALUES ('Barie', 'Hamilton', '4', 'Train', 'Jen', '00000', 'jen@test.com', '999 st. NE New York', 'Ben')";
-  db.query(sqlQuery, (err, result) => {
-    res.send("db is working..");
-  });
-});
-
-app.post("/api/quotes", (req, res) => {
-  const sqlQuery =
-    "INSERT INTO `wetbatdb`.`quotes` (`departure_airport`, `destination_airport`, `no_of_travellers`, `transportation`, `contact_name`, `contact_number`, `contact_email`, `contact_address`, `sales_person`) VALUES ('Barie', 'Hamilton', '4', 'Train', 'Jen', '00000', 'jen@test.com', '999 st. NE New York', 'Ben')";
+//ENDPOINT : '/api/createquote'
+//METHOD: POST
+//quick and dirty > refactor later.
+app.post("/api/createquote", (req, res) => {
+  const departure = req.body.departure;
+  const destination = req.body.destination;
+  const departure_date = req.body.departure_date;
+  const return_date = req.body.return_date;
+  const no_of_people = req.body.no_of_people;
+  const transportation = req.body.transportation;
+  const name = req.body.name;
+  db.query(
+    "INSERT INTO quotes (departure, destination, departure_date, return_date, no_of_people, transportation, name) VALUES (?,?,?,?,?,?,?)",
+    [
+      departure,
+      destination,
+      departure_date,
+      return_date,
+      no_of_people,
+      transportation,
+      name,
+    ],
+    (err, result) => {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log("values inserted.");
+      }
+    }
+  );
 });
 
 app.listen(PORT, () => {

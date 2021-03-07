@@ -1,0 +1,22 @@
+//this is more of a placeholder table to mimic the data from db.
+//no real schema for db is created.
+//after MySql is configured locally or accessible 
+
+//STEP -1 ~ creating database.
+
+"CREATE DATABASE wetbat";
+
+
+//STEP -2 ~ creating table
+//table
+
+CREATE TABLE quotes (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+departure VARCHAR(45),
+destination VARCHAR(45),
+departure_date VARCHAR(45),
+return_date VARCHAR(45),
+no_of_people VARCHAR(45),
+transportation VARCHAR(45),
+name VARCHAR(50)
+)

@@ -2,11 +2,10 @@ import React from "react";
 import Wrapper from "../layout/Wrapper";
 import classes from "./Form.module.css";
 const Input = ({ label, name, type, onChange }) => {
+  //for now without input sanitization.
   return (
     <Wrapper styles={classes.controls}>
-      <label htmlFor={label}>
-        {label}{" "}
-      </label>
+      <label htmlFor={label}>{label} </label>
       <input
         className={classes.input}
         type={type}

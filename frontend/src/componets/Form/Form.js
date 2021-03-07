@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import axios from "axios";
 import Input from "./Input";
 import classes from "./Form.module.css";
 const Form = () => {
   //refactor this > may be array to update values, using one useState.
+  //no input sanitization is used for now.
   const [departure, setDeparture] = useState("");
   const [destination, setDestination] = useState("");
   const [departure_date, setDeparture_date] = useState("");
@@ -10,17 +12,18 @@ const Form = () => {
   const [no_of_people, setNo_of_people] = useState("");
   const [transportation, setTransportation] = useState("");
   const [name, setName] = useState("");
-  const getData = () => {
-    console.log(
-      "the values are: ",
-      name,
-      departure,
-      departure_date,
-      destination,
-      no_of_people,
-      transportation,
-      return_date
-    );
+  const saveDataToDb = () => {
+    axios
+      .post("http://localhost:4000/api/createquote", {
+        departure: departure,
+        destination: destination,
+        departure_date: departure_date,
+        return_date: return_date,
+        no_of_people: no_of_people,
+        transportation: transportation,
+        name: name,
+      })
+      .then(() => console.log("success"));
   };
   return (
     <div className={classes.grid}>
@@ -82,7 +85,7 @@ const Form = () => {
         onChange={(event) => setName(event.target.value)}
         value={name}
       />
-      <button onClick={getData}>Create a quote</button>
+      <button onClick={saveDataToDb}>Create a quote</button>
     </div>
   );
 };
