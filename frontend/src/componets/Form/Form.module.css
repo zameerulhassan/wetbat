@@ -29,11 +29,12 @@ label, input {
 
 button{
   background-color: var(--secondary-color);
-  border-radius: 35%;
+  border-radius: 2rem;
   cursor: pointer;
   color: white;
   font-weight: bold;
   border: none;
+  width: 200px;
 }
 
 button:hover{
