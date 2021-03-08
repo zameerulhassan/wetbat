@@ -3,12 +3,20 @@
 const express = require("express");
 const router = express.Router();
 
+const quotesController = require("../controllers/getQuotes");
+
 const db = require("../util/database");
 //@route
 //ENDPOINT : '/api/quotes'
 //METHOD: GET
-router.get("/api/quotes", (req, res) => {
-  db.query("SELECT * FROM quotes", (err, result) => {
+router.get("/api/quotes", quotesController.quotesControllor);
+//TO DO....by monday.
+//@route
+//ENDPOINT : '/api/quotes/:id'
+//METHOD: GET
+router.get("/api/quotes/:quote_id", (req, res) => {
+  const quote_id = req.body.quote_id;
+  db.query("SELECT * FROM quotes WHERE id =?"[quote_id], (err, result) => {
     if (err) {
       console.log(err);
     } else {
@@ -16,20 +24,6 @@ router.get("/api/quotes", (req, res) => {
     }
   });
 });
-//TO DO....by monday.
-//@route
-//ENDPOINT : '/api/quotes/:id'
-//METHOD: GET
-// router.get("/api/quote/quote_id", (req, res) => {
-//   const quote_id = req.body.quote_id;
-//   db.query("SELECT * FROM quotes WHERE id =?"[quote_id], (err, result) => {
-//     if (err) {
-//       console.log(err);
-//     } else {
-//       res.send(result);
-//     }
-//   });
-// });
 
 //@route
 //ENDPOINT : '/api/createquote'
