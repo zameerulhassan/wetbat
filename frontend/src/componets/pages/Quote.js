@@ -1,3 +1,5 @@
+//TO DO... by monday.
+
 import React, { useState, useEffect } from "react";
 import classes from "./Quotes.module.css";
 import Wrapper from "../layout/Wrapper";

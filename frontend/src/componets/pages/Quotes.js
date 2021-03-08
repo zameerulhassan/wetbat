@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import classes from './Quotes.module.css'
+import classes from "./Quotes.module.css";
 import Wrapper from "../layout/Wrapper";
 const url = "http://localhost:4000/api/quotes";
 const Quotes = () => {
@@ -20,15 +20,17 @@ const Quotes = () => {
       {quotesList.map((qoute, key) => {
         return (
           <div key={key} className={classes.row}>
-            <p1>{qoute.name}</p1>
-            <p1>{qoute.departure}</p1>
-            <p1>{qoute.departure_date}</p1>
-            <p1>{qoute.destination}</p1>
-            <p1>{qoute.transportation}</p1>
+            <p>{qoute.name}</p>
+            <p>{qoute.departure}</p>
+            <p>{qoute.departure_date}</p>
+            <p>{qoute.destination}</p>
+            <p>{qoute.transportation}</p>
           </div>
         );
       })}
-      <button className={classes.button} onClick={getQuotes}>Refresh</button>
+      <button className={classes.button} onClick={getQuotes}>
+        Refresh
+      </button>
     </Wrapper>
   );
 };

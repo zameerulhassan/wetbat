@@ -1,20 +1,11 @@
 //refactor:  monolithic to controller , models... & util/config for db credentials.
-//create model class and export from models.
+//create model class and export from models to create db tables.
+//take route from this file to routes folder.
+const db = require("./util/database");
 
 const express = require("express");
 
 const cors = require("cors");
-
-const mysql = require("mysql");
-
-//this should come from config/env
-const db = mysql.createPool({
-  host: "localhost",
-  user: "root",
-  password: "password1",
-  port: "5000",
-  database: "wetbatdb",
-});
 
 const PORT = process.env.PORT || 4000;
 
@@ -35,6 +26,7 @@ app.post("/api/createquote", (req, res) => {
   const no_of_people = req.body.no_of_people;
   const transportation = req.body.transportation;
   const name = req.body.name;
+
   db.query(
     "INSERT INTO quotes (departure, destination, departure_date, return_date, no_of_people, transportation, name) VALUES (?,?,?,?,?,?,?)",
     [
@@ -68,7 +60,7 @@ app.get("/api/quotes", (req, res) => {
     }
   });
 });
-
+//TO DO....by monday.
 //@route
 //ENDPOINT : '/api/quotes/:id'
 //METHOD: GET
