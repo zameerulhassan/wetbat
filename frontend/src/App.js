@@ -19,7 +19,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={Main} />
             <Route path="/quotes" component={Quotes} />
-            <Route path="/quote" component={Quote} />
+            <Route path="/quote/:id" component={Quote} />
             <Route path="*" component={Error} />
           </Switch>
         </Wrapper>
