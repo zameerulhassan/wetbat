@@ -7,15 +7,17 @@ const getQuotes = require("../controllers/getQuotes");
 const postQuotes = require("../controllers/postQuotes");
 
 const db = require("../util/database");
+
 //@route
 //ENDPOINT : '/api/quotes'
 //METHOD: GET
 router.get("/api/quotes", getQuotes.quotesControllor);
+
 //TO DO....by monday.
 //@route
 //ENDPOINT : '/api/quotes/:id'
 //METHOD: GET
-router.get("/api/quotes/:quote_id", getQuotes.quoteController);
+router.get("/api/quote/:id", getQuotes.quoteController);
 
 //@route
 //ENDPOINT : '/api/createquote'

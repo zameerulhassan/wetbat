@@ -1,5 +1,6 @@
 //complete the model to use in all controllers.
-
+//ORM like Sequelize and required.
+//for now use SQL queries without model.
 module.exports = class Quote {
   constructor(
     departure,
@@ -24,6 +25,5 @@ module.exports = class Quote {
 
   static fetchAllQuotes() {
     //TO DO.  get request from db
-    this.Quote;
   }
 };

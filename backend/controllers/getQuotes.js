@@ -14,8 +14,8 @@ exports.quotesControllor = (req, res) => {
 
 //single quote
 exports.quoteController = (req, res) => {
-  const quote_id = req.body.quote_id;
-  db.query("SELECT * FROM quotes WHERE id =?"[quote_id], (err, result) => {
+  const quote_id = req.params.id;
+  db.query("SELECT * FROM quotes WHERE id =?", [quote_id], (err, result) => {
     if (err) {
       console.log(err);
     } else {
